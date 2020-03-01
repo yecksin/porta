@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 
 const routes: Routes = [
@@ -14,6 +15,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[
+    {provide:APP_BASE_HREF,useValue:'/'}
+]
 })
 export class AppRoutingModule { }
